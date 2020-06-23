@@ -1,7 +1,7 @@
 # BreakingBad PWA
 ![Unit Tests](https://github.com/menosprezzi/dragons/workflows/Unit%20Tests/badge.svg?branch=master)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Resumo
 Esta é uma PWA desenvolvida em Angular.
@@ -22,6 +22,7 @@ Resolvi utilizar de algumas práticas e estruturas visando o desenvolvimento de 
 para demonstrar como podemos organizar o nosso código de maneira mais desacoplada.
 Um exemplo, foi o uso de [Injection Tokens](https://angular.io/api/core/InjectionToken) para cuidar de variáveis de ambiente da aplicação.
 * Ex: `app.module.ts`
+
 Foi utilizado de _Path Aliases_ para isolar os _imports_ entre os módulos. Além de deixar mais claro as interações entre módulos, 
 quando esta prática está alinhada ao uso de Lints, tem como benefício restringir a utilização das interfaces públicas dos módulos, reduzindo assim um possível acoplamento.
 
@@ -68,7 +69,9 @@ Esse service poderia ser chamado de `ApiService` declarado no módulo `core`, se
 #### Design System
 Para produtos no modelo Saas ou Paas, sugiro centralizar os Componentes de UI dos projetos em uma biblioteca única, visando o reuso. Uma técnica que tem isso como foco, além de estruturar um processo de UI/UX, é o DesignSystem.
 Um exemplo é um pacote que tomei a iniciativa de desenvolver em outra oportunidade, o [Solar Components](https://github.com/accera-tech/solar-components). Implementamos um Design System utilizando o [Stencil](https://stenciljs.com/), a tecnologia desenvolvida pelo time do [Ionic](https://ionicframework.com/) como uma solução para o desenvolvimento de WebComponents.
+
 O Stencil é um compiler de WebComponents, e leva em consideração diversos fatores de usabilidade no seu desenvolvimento, como o LazyLoad de components, carregando os componentes utilizados em uma tela por demanda.
 Por ser menos verboso que o Angular (@angular/elements) na criação de componentes mas ainda sim por utilizar de TypeScript, seu desenvolvimento se dá de forma rápida e consistente.
+
 Estruturalmente, esse projeto foi criado com o conceito de [Atomic Design](http://atomicdesign.bradfrost.com/) em mente. Tudo isso facilita o desenvolvimento de uma biblioteca agnóstica a frameworks e reutilizável.
 Porém, WebComponents não é uma bala de prata, mas está sendo um caso de sucesso onde se possui diversos produtos desenvolvidos com tecnologias e times diferentes, e em até produtos legados que utilizem de SSR em .NET MVC ou semelhantes.

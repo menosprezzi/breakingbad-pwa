@@ -1,0 +1,9 @@
+<img class="app-header__logo" [src]="darkThemeEnabled ? 'assets/images/logo-white.png' : 'assets/images/logo-black.png'" />
+<div class="app-header__actions">
+  <button class="app-form-toggle" (click)="toggleTheme()" tabindex="0" role="checkbox" [attr.aria-checked]="darkThemeEnabled" aria-label="Modo escuro">
+    <input type="checkbox" class="app-form-toggle__native" #toggleThemeCheckbox aria-hidden="true" />
+    <span class="app-form-toggle__bullet">
+      <i class="fas" [ngClass]="darkThemeEnabled ? 'fa-moon' : 'fa-sun'"></i>
+    </span>
+  </button>
+</div>

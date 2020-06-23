@@ -1,0 +1,22 @@
+@import "../../../../theme/variables";
+
+:host {
+  .app-characters-list__list-wrapper {
+    margin: 0 -(map_get($spacers, 1));
+
+    @include media-breakpoint-up("md") {
+      margin: 0 -(map_get($spacers, 2));
+    }
+  }
+
+  .app-characters-list__card-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 125%;
+
+    & > * {
+      position: absolute;
+    }
+  }
+}

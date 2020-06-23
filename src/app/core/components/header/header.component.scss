@@ -1,0 +1,22 @@
+@import "../../../../theme/variables";
+
+:host {
+  display: flex;
+  width: 100%;
+  min-height: 56px;
+  padding: 0 map_get($spacers, 4);
+  justify-content: space-between;
+  align-items: center;
+  background: var(--app-secondary-backgroud-color);
+  box-shadow: $box-shadow-sm;
+  @include media-breakpoint-down("sm") {
+    padding: 0 map_get($spacers, 2);
+  }
+
+  .app-header__logo {
+    width: 128px;
+  }
+
+  .app-header__actions {
+  }
+}

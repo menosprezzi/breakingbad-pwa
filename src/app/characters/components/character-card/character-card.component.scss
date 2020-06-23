@@ -1,0 +1,51 @@
+@import "../../../../theme/variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 8px;
+  background: lighten(theme-color("success"), 20%);
+  color: $body-color;
+  box-shadow: $box-shadow-sm;
+  transition: transform $transition-base, box-shadow $transition-base;
+  &:hover {
+    box-shadow: $box-shadow-lg;
+    transform: scale(1.05);
+    z-index: 1;
+  }
+  &.app-character-card--dead {
+    background: lighten(theme-color("danger"), 20%);
+  }
+  @include media-breakpoint-up("md") {
+    padding: 16px;
+  }
+
+  .app-character-card__id {
+    font-size: 12px;
+    text-align: end;
+    color: rgba($body-color, .7);
+  }
+
+  .app-character-card__abrev {
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .app-character-card__name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  .app-character-card__nickname {
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    color: rgba($body-color, .7);
+  }
+}

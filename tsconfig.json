@@ -16,6 +16,13 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "resolveJsonModule": true,
+    "types": ["node", "jasmine"],
+    "paths": {
+      "@app/core/*": ["src/app/core/*"],
+      "@app/characters/*": ["src/app/characters/*"],
+      "@app/utils/*": ["src/utils/*"]
+    },
     "lib": [
       "es2018",
       "dom"

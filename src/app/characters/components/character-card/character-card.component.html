@@ -1,0 +1,12 @@
+<div class="app-character-card__id" aria-hidden="true">
+  {{ character.id }}
+</div>
+<div class="app-character-card__abrev" aria-hidden="true">
+  {{ character.name.slice(0, 2) }}
+</div>
+<h1 class="app-character-card__name" [attr.aria-label]="'Nome: ' + character.name + '.'">
+  {{ character.name }}
+</h1>
+<h2 class="app-character-card__nickname" [attr.aria-label]="'Também conhecido como: ' + character.nickname + '.'">
+  ({{ character.nickname }})
+</h2>

@@ -1,0 +1,141 @@
+@import "./variables";
+
+
+
+// Button Style
+// ------------------------------
+
+.app-button {
+  padding: map_get($spacers, 2) map_get($spacers, 3);
+  border: none;
+  color: lighten(theme-color("primary"), 10%);;
+  box-shadow: $box-shadow-sm;
+  background-color: var(--app-secondary-backgroud-color);
+  transition: $transition-base;
+
+  &:hover {
+    background-color: lighten(theme-color("primary"), 10%);
+    color: white;
+  }
+
+  &:active {
+    background-color: theme-color("primary");
+    transform: scale(0.95);
+  }
+}
+
+
+// Anchor Style
+// ------------------------------
+
+.app-anchor {
+  font-size: $font-size-sm;
+  color: var(--app-base-text-color);
+  padding: map_get($spacers, 1) map_get($spacers, 2);
+  transition: background $transition-base;
+  &:hover {
+    color: var(--app-base-text-color);
+    text-decoration: none;
+    background: var(--app-secondary-backgroud-color);
+    box-shadow: $box-shadow-sm;
+  }
+}
+
+
+
+// Form Input Style
+// ------------------------------
+
+.app-form-input {
+  display: flex;
+  align-items: center;
+  background: var(--app-secondary-backgroud-color);
+  box-shadow: $box-shadow-sm;
+  input {
+    padding: map_get($spacers, 2) map_get($spacers, 3);
+    border: none;
+    background: transparent;
+    color: var(--app-base-text-color);
+  }
+  .app-form-input__end {
+    padding: map_get($spacers, 2) map_get($spacers, 3);
+  }
+  .app-button {
+    box-shadow: none;
+  }
+}
+
+
+
+// Form Toggle Style
+// ------------------------------
+
+.app-form-toggle {
+  width: 48px;
+  height: 28px;
+  padding: 4px;
+  background: var(--app-base-backgroud-color);
+  border: none;
+  border-radius: 28px;
+
+  .app-form-toggle__bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    font-size: 10px;
+    color: var(--app-base-backgroud-color);
+    background: var(--app-secondary-text-color);
+    transition: transform $transition-base, background $transition-base;
+  }
+
+  .app-form-toggle__native {
+    display: none;
+    &:checked + .app-form-toggle__bullet {
+      transform: translateX(100%);
+    }
+  }
+
+  &:hover {
+    .app-form-toggle__bullet {
+      background: lighten(theme-color("primary"), 10%);
+    }
+  }
+}
+
+
+
+// Page Header Style
+// ------------------------------
+
+.app-page-header {
+  padding: map_get($spacers, 5) 0;
+
+  @include media-breakpoint-down("md") {
+    padding-top: map_get($spacers, 3);
+    padding-bottom: map_get($spacers, 3);
+  }
+}
+
+
+
+// Badge Style
+// ------------------------------
+
+.app-badge {
+  width: map_get($spacers, 2);
+  height: map_get($spacers, 2);
+  border-radius: 100%;
+
+  &.app-badge--success {
+    background: map_get($theme-colors, 'success');
+  }
+  &.app-badge--danger {
+    background: map_get($theme-colors, 'danger');
+  }
+  &.app-badge--warning {
+    background: map_get($theme-colors, 'warning');
+  }
+}
